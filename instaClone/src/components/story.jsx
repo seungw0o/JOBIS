@@ -23,7 +23,7 @@ export const Profile = styled.img`
   border: solid 1px black;
 `;
 const Name = styled.span`
-  color: #a8a8a8;
+  color: #000000;
   font-size: 12px;
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
     Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
