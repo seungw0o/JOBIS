@@ -14,8 +14,8 @@ function App() {
 export default App;
 
 const Wrapper = styled.div`
-  height: 100vh;
   display: flex;
+  width: 100vw;
   justify-content: space-between;
 `;
 
@@ -26,5 +26,8 @@ const GlobalStyles = createGlobalStyle`
   }
   body {
   background-color: white;
+  height:5000px;
+  width:100vw;
+  margin:0;
   }
 `;
