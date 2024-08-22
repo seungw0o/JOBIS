@@ -20,20 +20,18 @@ const Home = () => {
 export default Home;
 
 const RightSide = styled.div`
-  padding: 0px 0px 0px 64px;
   display: flex;
-  flex-direction: column;
+  padding: 0px 0px 0px 9px;
 `;
 
 const Container = styled.div`
   display: flex;
-  flex-direction: column;
-  /* padding: 40px; */
-  margin: 0;
+  margin-left: 350px;
 `;
 
 const Wrapper = styled.div`
   display: flex;
   justify-content: space-between;
   width: 100vw;
+  margin: 0;
 `;
