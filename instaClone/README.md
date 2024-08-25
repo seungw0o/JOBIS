@@ -1,8 +1,4 @@
-# React + Vite
-
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
-
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+# 오류 및 도와주세요
+1. 메뉴에서 버튼을 누르면 활성화 되지만, 다시 누르면 비활성화 되는 문
+2. 좋아요를 누르고 저장 버튼을 누르면 좋아요가 취소되고 저장 버튼이 활성화되는 문제
+3. 스크롤바가 왜 나왔는지 해결하지 못함.
