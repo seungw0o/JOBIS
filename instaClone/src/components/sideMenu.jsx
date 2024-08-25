@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import NavIcons from "../../icons/navicons";
+import NavIcons from "../icons/navicons";
 import { Profile } from "./story";
 import { useState } from "react";
 
