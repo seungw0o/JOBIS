@@ -4,7 +4,11 @@ export const Story = ({ name }) => {
   return (
     <Human>
       <Button>
-        <Profile src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ3G8FOX8WmJdD0DWd4xfoi5I1mLjkSjFbFaA&s" />
+        <Profile
+          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ3G8FOX8WmJdD0DWd4xfoi5I1mLjkSjFbFaA&s"
+          height={56}
+          width={56}
+        />
         <Name>{name}</Name>
       </Button>
     </Human>
@@ -17,8 +21,8 @@ const Human = styled.div`
   height: 120px;
 `;
 export const Profile = styled.img`
-  height: 56px;
-  width: 56px;
+  height: ${props => props.height}px;
+  width: ${props => props.width}px;
   border-radius: 100px;
   border: solid 1px black;
 `;
