@@ -5,13 +5,18 @@ import { useState } from "react";
 
 const Peed = () => {
   const [selectedIcon, setSelectedIcon] = useState(null);
+  const [likes, setLikes] = useState(0);
   const name = "glittermoon2023";
   const exp = "hi hello";
   const handleClick = iconName => {
     setSelectedIcon(iconName);
   };
+  const onClick = name => {
+    handleClick(name);
+    name === "Heart" ? setLikes(likes + 1) : "";
+  };
   let time = 18;
-  let likes = 5;
+
   return (
     <Wrapper>
       <InfoField>
@@ -34,7 +39,7 @@ const Peed = () => {
       <BottomField>
         <IconField>
           <Container>
-            <HeartBox onClick={() => handleClick("Heart")}>
+            <HeartBox onClick={() => onClick("Heart")}>
               {selectedIcon === "Heart" ? (
                 <NavIcons.Heart selected />
               ) : (
@@ -44,7 +49,7 @@ const Peed = () => {
             <NavIcons.Reply />
             <NavIcons.Message />
           </Container>
-          <SaveBox onClick={() => handleClick("Save")}>
+          <SaveBox onClick={() => onClick("Save")}>
             {selectedIcon === "Save" ? (
               <NavIcons.Save selected />
             ) : (
