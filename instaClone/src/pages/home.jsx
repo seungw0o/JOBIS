@@ -13,9 +13,9 @@ const Home = () => {
         <StoryBoard />
         <PeedBoard />
       </Container>
-      <RightSide>
+      {/* <RightSide>
         <SuggestTab />
-      </RightSide>
+      </RightSide> */}
     </Wrapper>
   );
 };
@@ -31,12 +31,12 @@ const RightSide = styled.div`
 const Container = styled.div`
   display: flex;
   margin-left: 350px;
+
   flex-direction: column;
 `;
 
 const Wrapper = styled.div`
   display: flex;
   justify-content: space-between;
-  width: 100vw;
   margin: 0;
 `;

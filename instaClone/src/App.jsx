@@ -15,7 +15,6 @@ export default App;
 
 const Wrapper = styled.div`
   display: flex;
-  width: 100vw;
   justify-content: space-between;
 `;
 
@@ -23,11 +22,11 @@ const GlobalStyles = createGlobalStyle`
   ${reset};
   *{
     box-sizing:border-box;
+    margin: 0;
   }
   body {
   background-color: white;
   height:5000px;
-  width:100vw;
-  margin:0;
+  
   }
 `;

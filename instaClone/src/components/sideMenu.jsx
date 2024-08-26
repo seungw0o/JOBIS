@@ -190,7 +190,7 @@ const LogoField = styled.div`
 `;
 
 const Wrapper = styled.div`
-  border: solid rgb(101, 104, 108, 0.3) 1px;
+  border: 1px solid rgb(101, 104, 108, 0.3);
   position: fixed;
   height: 100vh;
   width: 16%;
