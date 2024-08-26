@@ -99,14 +99,14 @@ const SideMenu = () => {
             <NavIcons.Create />
             <MenuName>만들기</MenuName>
           </IconContainer>
-          <ProfileField>
+          <IconContainer>
             <Profile
               src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ3G8FOX8WmJdD0DWd4xfoi5I1mLjkSjFbFaA&s"
               height={24}
               width={24}
             />
             <Name>프로필</Name>
-          </ProfileField>
+          </IconContainer>
         </MidIcons>
         <IconContainer>
           <NavIcons.Thread />
@@ -137,7 +137,7 @@ const MenuName = styled.span`
     Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   font-size: 16px;
   color: #000000;
-  padding: 0px 0px 0px 16px;
+  padding-left: 16px;
   margin: 4px 0px;
   font-weight: ${props => props.weight};
 `;
@@ -163,19 +163,6 @@ const Name = styled.span`
   color: #000000;
   padding: 0px 0px 0px 16px;
   margin: 4px 0px;
-`;
-
-const ProfileField = styled.div`
-  display: flex;
-  margin: 4px 0px;
-  padding: 12px;
-  cursor: pointer;
-  &:hover {
-    background-color: #e9ebf0;
-    img {
-      transform: scale(1.1);
-    }
-  }
 `;
 
 const MidIcons = styled.div`
