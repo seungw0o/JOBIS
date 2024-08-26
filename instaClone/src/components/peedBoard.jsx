@@ -7,6 +7,8 @@ const PeedBoard = () => {
   return (
     <Wrapper>
       <Peed />
+      <Peed />
+      <Peed />
     </Wrapper>
   );
 };
@@ -16,5 +18,7 @@ export default PeedBoard;
 const Wrapper = styled.div`
   display: flex;
   justify-content: center;
+  margin: 0px auto;
   box-sizing: border-box;
+  flex-direction: column;
 `;
