@@ -105,7 +105,7 @@ const SideMenu = () => {
               height={24}
               width={24}
             />
-            <Name>Profile</Name>
+            <Name>프로필</Name>
           </ProfileField>
         </MidIcons>
         <IconContainer>
