@@ -13,9 +13,9 @@ const Home = () => {
         <StoryBoard />
         <PeedBoard />
       </Container>
-      {/* <RightSide>
+      <RightSide>
         <SuggestTab />
-      </RightSide> */}
+      </RightSide>
     </Wrapper>
   );
 };
