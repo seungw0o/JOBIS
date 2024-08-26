@@ -21,12 +21,12 @@ const SideMenu = () => {
             {selectedIcon === "Home" ? (
               <>
                 <NavIcons.Home selected />
-                <MenuName weight={600}>홈</MenuName>
+                <Name weight={600}>홈</Name>
               </>
             ) : (
               <>
                 <NavIcons.Home />
-                <MenuName weight={0}>홈</MenuName>
+                <Name weight={0}>홈</Name>
               </>
             )}
           </IconContainer>
@@ -34,12 +34,12 @@ const SideMenu = () => {
             {selectedIcon === "Search" ? (
               <>
                 <NavIcons.Search selected />
-                <MenuName weight={600}>검색</MenuName>
+                <Name weight={600}>검색</Name>
               </>
             ) : (
               <>
                 <NavIcons.Search />
-                <MenuName weight={0}>검색</MenuName>
+                <Name weight={0}>검색</Name>
               </>
             )}
           </IconContainer>
@@ -47,12 +47,12 @@ const SideMenu = () => {
             {selectedIcon === "Research" ? (
               <>
                 <NavIcons.Research selected />
-                <MenuName weight={600}>탐색 탭</MenuName>
+                <Name weight={600}>탐색 탭</Name>
               </>
             ) : (
               <>
                 <NavIcons.Research />
-                <MenuName weight={0}>탐색 탭</MenuName>
+                <Name weight={0}>탐색 탭</Name>
               </>
             )}
           </IconContainer>
@@ -60,12 +60,12 @@ const SideMenu = () => {
             {selectedIcon === "Reels" ? (
               <>
                 <NavIcons.Reels selected />
-                <MenuName weight={600}>릴스</MenuName>
+                <Name weight={600}>릴스</Name>
               </>
             ) : (
               <>
                 <NavIcons.Reels />
-                <MenuName weight={0}>릴스</MenuName>
+                <Name weight={0}>릴스</Name>
               </>
             )}
           </IconContainer>
@@ -73,12 +73,12 @@ const SideMenu = () => {
             {selectedIcon === "Message" ? (
               <>
                 <NavIcons.Message selected />
-                <MenuName weight={600}>메시지</MenuName>
+                <Name weight={600}>메시지</Name>
               </>
             ) : (
               <>
                 <NavIcons.Message />
-                <MenuName weight={0}>메시지</MenuName>
+                <Name weight={0}>메시지</Name>
               </>
             )}
           </IconContainer>
@@ -86,42 +86,42 @@ const SideMenu = () => {
             {selectedIcon === "Alert" ? (
               <>
                 <NavIcons.Alert selected />
-                <MenuName weight={600}>알림</MenuName>
+                <Name weight={600}>알림</Name>
               </>
             ) : (
               <>
                 <NavIcons.Alert />
-                <MenuName weight={0}>알림</MenuName>
+                <Name weight={0}>알림</Name>
               </>
             )}
           </IconContainer>
           <IconContainer>
             <NavIcons.Create />
-            <MenuName>만들기</MenuName>
+            <Name>만들기</Name>
           </IconContainer>
-          <ProfileField>
+          <IconContainer>
             <Profile
               src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ3G8FOX8WmJdD0DWd4xfoi5I1mLjkSjFbFaA&s"
               height={24}
               width={24}
             />
-            <Name>프로필</Name>
-          </ProfileField>
+            <Name weight={0}>프로필</Name>
+          </IconContainer>
         </MidIcons>
         <IconContainer>
           <NavIcons.Thread />
-          <MenuName>Threads</MenuName>
+          <Name>Threads</Name>
         </IconContainer>
         <IconContainer onClick={() => handleClick("More")}>
           {selectedIcon === "More" ? (
             <>
               <NavIcons.More selected />
-              <MenuName weight={600}>더 보기</MenuName>
+              <Name weight={600}>더 보기</Name>
             </>
           ) : (
             <>
               <NavIcons.More />
-              <MenuName weight={0}>더 보기</MenuName>
+              <Name weight={0}>더 보기</Name>
             </>
           )}
         </IconContainer>
@@ -132,12 +132,12 @@ const SideMenu = () => {
 
 export default SideMenu;
 
-const MenuName = styled.span`
+const Name = styled.span`
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
     Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   font-size: 16px;
   color: #000000;
-  padding: 0px 0px 0px 16px;
+  padding-left: 16px;
   margin: 4px 0px;
   font-weight: ${props => props.weight};
 `;
@@ -156,28 +156,6 @@ const IconContainer = styled.div`
   }
 `;
 
-const Name = styled.span`
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-  font-size: 16px;
-  color: #000000;
-  padding: 0px 0px 0px 16px;
-  margin: 4px 0px;
-`;
-
-const ProfileField = styled.div`
-  display: flex;
-  margin: 4px 0px;
-  padding: 12px;
-  cursor: pointer;
-  &:hover {
-    background-color: #e9ebf0;
-    img {
-      transform: scale(1.1);
-    }
-  }
-`;
-
 const MidIcons = styled.div`
   display: flex;
   flex-direction: column;
@@ -185,8 +163,8 @@ const MidIcons = styled.div`
 `;
 
 const LogoField = styled.div`
-  margin: 0px 0px 19px;
-  padding: 25px 12px 16px;
+  margin: 0px 0px 19px 0px;
+  padding: 25px 12px 16px 0px;
 `;
 
 const Wrapper = styled.div`
