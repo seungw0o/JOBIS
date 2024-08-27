@@ -4,16 +4,15 @@ import NavIcons from "../icons/navicons";
 import { useState } from "react";
 
 const Peed = () => {
-  const [selectedIcon, setSelectedIcon] = useState(null);
+  const [heartIcon, setHeartIcon] = useState(false);
+  const [saveIcon, setSaveIcon] = useState(false);
   const [likes, setLikes] = useState(0);
   const name = "glittermoon2023";
   const exp = "hi hello";
-  const handleClick = iconName => {
-    setSelectedIcon(iconName);
-  };
-  const onClick = name => {
-    handleClick(name);
-    name === "Heart" ? setLikes(likes + 1) : "";
+
+  const onClick = () => {
+    setHeartIcon(!heartIcon);
+    heartIcon === true ? setLikes(likes - 1) : setLikes(likes + 1);
   };
   let time = 18;
 
@@ -39,8 +38,8 @@ const Peed = () => {
       <BottomField>
         <IconField>
           <Container>
-            <HeartBox onClick={() => onClick("Heart")}>
-              {selectedIcon === "Heart" ? (
+            <HeartBox onClick={() => onClick()}>
+              {heartIcon === true ? (
                 <NavIcons.Heart selected />
               ) : (
                 <NavIcons.Heart />
@@ -49,12 +48,8 @@ const Peed = () => {
             <NavIcons.Reply />
             <NavIcons.Message />
           </Container>
-          <SaveBox onClick={() => onClick("Save")}>
-            {selectedIcon === "Save" ? (
-              <NavIcons.Save selected />
-            ) : (
-              <NavIcons.Save />
-            )}
+          <SaveBox onClick={() => setSaveIcon(!saveIcon)}>
+            {saveIcon === true ? <NavIcons.Save selected /> : <NavIcons.Save />}
           </SaveBox>
         </IconField>
         <TextField>
