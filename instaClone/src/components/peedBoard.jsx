@@ -6,9 +6,9 @@ const PeedBoard = () => {
   const [peeds, setPeeds] = useState([]);
   return (
     <Wrapper>
-      <Peed />
-      <Peed />
-      <Peed />
+      <Peed name={"ee.j_x0"} time={"10"} exp={"테스트"} />
+      <Peed name={"txd.w0_"} time={"1"} exp={"JOBIS"} />
+      <Peed name={"hi"} time={"200"} exp={"집가자"} />
     </Wrapper>
   );
 };
