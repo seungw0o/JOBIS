@@ -3,18 +3,15 @@ import { Profile } from "./story";
 import NavIcons from "../icons/navicons";
 import { useState } from "react";
 
-const Peed = () => {
+const Peed = ({ name, time, exp }) => {
   const [heartIcon, setHeartIcon] = useState(false);
   const [saveIcon, setSaveIcon] = useState(false);
   const [likes, setLikes] = useState(0);
-  const name = "glittermoon2023";
-  const exp = "hi hello";
 
   const onClick = () => {
     setHeartIcon(!heartIcon);
     heartIcon === true ? setLikes(likes - 1) : setLikes(likes + 1);
   };
-  let time = 18;
 
   return (
     <Wrapper>
@@ -35,7 +32,7 @@ const Peed = () => {
       <ContentField>
         <Content src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ3G8FOX8WmJdD0DWd4xfoi5I1mLjkSjFbFaA&s" />
       </ContentField>
-      <BottomField>
+      <div>
         <IconField>
           <Container>
             <HeartBox onClick={() => onClick()}>
@@ -52,14 +49,14 @@ const Peed = () => {
             {saveIcon === true ? <NavIcons.Save selected /> : <NavIcons.Save />}
           </SaveBox>
         </IconField>
-        <TextField>
-          <Likes>좋아요 {likes}개</Likes>
+        <div>
+          <Text weight={600}>좋아요 {likes}개</Text>
           <ExpField>
-            <Name>{name}</Name>
-            <Exp>{exp}</Exp>
+            <Text weight={600}>{name}</Text>
+            <Text weight={0}>{exp}</Text>
           </ExpField>
-        </TextField>
-      </BottomField>
+        </div>
+      </div>
     </Wrapper>
   );
 };
@@ -70,36 +67,20 @@ const ExpField = styled.div`
   margin: 8px 0px 0px;
   gap: 5px;
 `;
-const Name = styled.span`
+const Text = styled.span`
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
     Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   font-size: 14px;
-  font-weight: 600;
-  color: #000000;
-`;
-const Exp = styled.span`
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-  font-size: 14px;
+  font-weight: ${props => props.weight};
   color: #000000;
 `;
 
-const Likes = styled.span`
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-  font-size: 14px;
-  font-weight: 600;
-  color: #000000;
-`;
-const TextField = styled.div``;
 const SaveBox = styled.div`
   box-sizing: border-box;
 `;
 const HeartBox = styled.div`
   box-sizing: border-box;
 `;
-
-const BottomField = styled.div``;
 
 const Container = styled.div`
   display: flex;
@@ -139,7 +120,7 @@ const Time = styled.span`
 
 const InfoField = styled.div`
   display: flex;
-  gap: 200px;
+  justify-content: space-between;
 `;
 
 const UserName = styled.span`
