@@ -105,11 +105,7 @@ const SideMenu = () => {
               height={24}
               width={24}
             />
-<<<<<<< HEAD
             <Name weight={0}>프로필</Name>
-=======
-            <Name>프로필</Name>
->>>>>>> cae447e5a8c3a0d8b40835e2da35cde9234070bc
           </IconContainer>
         </MidIcons>
         <IconContainer>
@@ -160,18 +156,6 @@ const IconContainer = styled.div`
   }
 `;
 
-<<<<<<< HEAD
-=======
-const Name = styled.span`
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-  font-size: 16px;
-  color: #000000;
-  padding: 0px 0px 0px 16px;
-  margin: 4px 0px;
-`;
-
->>>>>>> cae447e5a8c3a0d8b40835e2da35cde9234070bc
 const MidIcons = styled.div`
   display: flex;
   flex-direction: column;
