@@ -2,13 +2,85 @@ import styled from "styled-components";
 import NavIcons from "../icons/navicons";
 import { Profile } from "./story";
 import { useState } from "react";
+import { useLocation, useNavigate } from "react-router-dom";
 
 const SideMenu = () => {
-  const [selectedIcon, setSelectedIcon] = useState(null);
-
-  const handleClick = iconName => {
-    setSelectedIcon(iconName);
+  const [homeIcon, setHomeIcon] = useState(false);
+  const [searchIcon, setSearchIcon] = useState(false);
+  const [researchIcon, setResearchIcon] = useState(false);
+  const [reelsIcon, setReelsIcon] = useState(false);
+  const [messageIcon, setMessageIcon] = useState(false);
+  const [alertIcon, setAlertIcon] = useState(false);
+  const [moreIcon, setMoreIcon] = useState(false);
+  const navigate = useNavigate();
+  const onSearch = () => {
+    setSearchIcon(!searchIcon);
+    setHomeIcon(false);
+    setResearchIcon(false);
+    setReelsIcon(false);
+    setMessageIcon(false);
+    setAlertIcon(false);
+    setMoreIcon(false);
   };
+  const onResearch = () => {
+    setResearchIcon(!researchIcon);
+    setHomeIcon(false);
+    setSearchIcon(false);
+    setReelsIcon(false);
+    setMessageIcon(false);
+    setAlertIcon(false);
+    setMoreIcon(false);
+  };
+  const onReels = () => {
+    setReelsIcon(!reelsIcon);
+    setHomeIcon(false);
+    setResearchIcon(false);
+    setSearchIcon(false);
+    setMessageIcon(false);
+    setAlertIcon(false);
+    setMoreIcon(false);
+  };
+  const onMessage = () => {
+    setMessageIcon(!messageIcon);
+    setHomeIcon(false);
+    setResearchIcon(false);
+    setReelsIcon(false);
+    setSearchIcon(false);
+    setAlertIcon(false);
+    setMoreIcon(false);
+  };
+  const onAlert = () => {
+    setAlertIcon(!alertIcon);
+    setHomeIcon(false);
+    setResearchIcon(false);
+    setReelsIcon(false);
+    setMessageIcon(false);
+    setSearchIcon(false);
+    setMoreIcon(false);
+  };
+  const onMore = () => {
+    setMoreIcon(!moreIcon);
+    setHomeIcon(false);
+    setResearchIcon(false);
+    setReelsIcon(false);
+    setMessageIcon(false);
+    setAlertIcon(false);
+    setSearchIcon(false);
+  };
+  const onProfile = () => {
+    navigate("/profile");
+  };
+  const onHome = () => {
+    navigate("");
+    setHomeIcon(!homeIcon);
+    setMoreIcon(false);
+    setResearchIcon(false);
+    setReelsIcon(false);
+    setMessageIcon(false);
+    setAlertIcon(false);
+    setSearchIcon(false);
+  };
+  const loacation = useLocation();
 
   return (
     <Wrapper>
@@ -17,8 +89,8 @@ const SideMenu = () => {
           <NavIcons.LogoText />
         </LogoField>
         <MidIcons>
-          <IconContainer onClick={() => handleClick("Home")}>
-            {selectedIcon === "Home" ? (
+          <IconContainer onClick={onHome}>
+            {loacation.pathname === "/" ? (
               <>
                 <NavIcons.Home selected />
                 <Name weight={600}>홈</Name>
@@ -30,8 +102,8 @@ const SideMenu = () => {
               </>
             )}
           </IconContainer>
-          <IconContainer onClick={() => handleClick("Search")}>
-            {selectedIcon === "Search" ? (
+          <IconContainer onClick={() => onSearch()}>
+            {searchIcon === true ? (
               <>
                 <NavIcons.Search selected />
                 <Name weight={600}>검색</Name>
@@ -43,8 +115,8 @@ const SideMenu = () => {
               </>
             )}
           </IconContainer>
-          <IconContainer onClick={() => handleClick("Research")}>
-            {selectedIcon === "Research" ? (
+          <IconContainer onClick={() => onResearch()}>
+            {researchIcon === true ? (
               <>
                 <NavIcons.Research selected />
                 <Name weight={600}>탐색 탭</Name>
@@ -56,8 +128,8 @@ const SideMenu = () => {
               </>
             )}
           </IconContainer>
-          <IconContainer onClick={() => handleClick("Reels")}>
-            {selectedIcon === "Reels" ? (
+          <IconContainer onClick={() => onReels()}>
+            {reelsIcon === true ? (
               <>
                 <NavIcons.Reels selected />
                 <Name weight={600}>릴스</Name>
@@ -69,8 +141,8 @@ const SideMenu = () => {
               </>
             )}
           </IconContainer>
-          <IconContainer onClick={() => handleClick("Message")}>
-            {selectedIcon === "Message" ? (
+          <IconContainer onClick={() => onMessage()}>
+            {messageIcon === true ? (
               <>
                 <NavIcons.Message selected />
                 <Name weight={600}>메시지</Name>
@@ -82,8 +154,8 @@ const SideMenu = () => {
               </>
             )}
           </IconContainer>
-          <IconContainer onClick={() => handleClick("Alert")}>
-            {selectedIcon === "Alert" ? (
+          <IconContainer onClick={() => onAlert()}>
+            {alertIcon === true ? (
               <>
                 <NavIcons.Alert selected />
                 <Name weight={600}>알림</Name>
@@ -99,7 +171,7 @@ const SideMenu = () => {
             <NavIcons.Create />
             <Name>만들기</Name>
           </IconContainer>
-          <IconContainer>
+          <IconContainer onClick={onProfile}>
             <Profile
               src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ3G8FOX8WmJdD0DWd4xfoi5I1mLjkSjFbFaA&s"
               height={24}
@@ -112,8 +184,8 @@ const SideMenu = () => {
           <NavIcons.Thread />
           <Name>Threads</Name>
         </IconContainer>
-        <IconContainer onClick={() => handleClick("More")}>
-          {selectedIcon === "More" ? (
+        <IconContainer onClick={() => onMore()}>
+          {moreIcon === true ? (
             <>
               <NavIcons.More selected />
               <Name weight={600}>더 보기</Name>
@@ -150,6 +222,7 @@ const IconContainer = styled.div`
   border-radius: 5px;
   &:hover {
     background-color: #e9ebf0;
+
     svg {
       transform: scale(1.1);
     }
@@ -163,8 +236,8 @@ const MidIcons = styled.div`
 `;
 
 const LogoField = styled.div`
-  margin: 0px 0px 19px 0px;
-  padding: 25px 12px 16px 0px;
+  margin: 0px 0px 19px;
+  padding: 25px 12px 16px;
 `;
 
 const Wrapper = styled.div`
