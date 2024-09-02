@@ -1,12 +1,12 @@
 import styled, { createGlobalStyle } from "styled-components";
-import Home from "./pages/home";
 import reset from "styled-reset";
+import MainRouter from "./routes/mainRouter";
 
 function App() {
   return (
     <Wrapper>
       <GlobalStyles />
-      <Home />
+      <MainRouter />
     </Wrapper>
   );
 }
@@ -26,7 +26,5 @@ const GlobalStyles = createGlobalStyle`
   }
   body {
   background-color: white;
-  height:5000px;
-  
   }
 `;
