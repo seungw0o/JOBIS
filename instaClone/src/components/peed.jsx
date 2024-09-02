@@ -20,7 +20,7 @@ const Peed = ({ name, time, exp }) => {
           <Profile
             height={32}
             width={32}
-            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ3G8FOX8WmJdD0DWd4xfoi5I1mLjkSjFbFaA&s"
+            src="https://start.litt.ly/common/img/default_profile.png"
           />
           <UserName>{name} </UserName>
           <Time>• {time}시간</Time>

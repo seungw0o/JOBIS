@@ -5,7 +5,7 @@ export const Story = ({ name }) => {
     <Human>
       <Button>
         <Profile
-          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ3G8FOX8WmJdD0DWd4xfoi5I1mLjkSjFbFaA&s"
+          src="https://start.litt.ly/common/img/default_profile.png"
           height={56}
           width={56}
         />
@@ -24,7 +24,7 @@ export const Profile = styled.img`
   height: ${props => props.height}px;
   width: ${props => props.width}px;
   border-radius: 100px;
-  border: solid 1px black;
+  border: ${props => props.border}px solid black;
 `;
 const Name = styled.span`
   color: #000000;
