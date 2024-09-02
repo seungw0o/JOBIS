@@ -12,6 +12,7 @@ const SideMenu = () => {
   const [messageIcon, setMessageIcon] = useState(false);
   const [alertIcon, setAlertIcon] = useState(false);
   const [moreIcon, setMoreIcon] = useState(false);
+  const [profileIcon, setProfileIcon] = useState(false);
   const navigate = useNavigate();
   const onSearch = () => {
     setSearchIcon(!searchIcon);
@@ -21,6 +22,7 @@ const SideMenu = () => {
     setMessageIcon(false);
     setAlertIcon(false);
     setMoreIcon(false);
+    setProfileIcon(false);
   };
   const onResearch = () => {
     setResearchIcon(!researchIcon);
@@ -30,6 +32,7 @@ const SideMenu = () => {
     setMessageIcon(false);
     setAlertIcon(false);
     setMoreIcon(false);
+    setProfileIcon(false);
   };
   const onReels = () => {
     setReelsIcon(!reelsIcon);
@@ -39,6 +42,7 @@ const SideMenu = () => {
     setMessageIcon(false);
     setAlertIcon(false);
     setMoreIcon(false);
+    setProfileIcon(false);
   };
   const onMessage = () => {
     setMessageIcon(!messageIcon);
@@ -48,6 +52,7 @@ const SideMenu = () => {
     setSearchIcon(false);
     setAlertIcon(false);
     setMoreIcon(false);
+    setProfileIcon(false);
   };
   const onAlert = () => {
     setAlertIcon(!alertIcon);
@@ -57,6 +62,7 @@ const SideMenu = () => {
     setMessageIcon(false);
     setSearchIcon(false);
     setMoreIcon(false);
+    setProfileIcon(false);
   };
   const onMore = () => {
     setMoreIcon(!moreIcon);
@@ -66,9 +72,11 @@ const SideMenu = () => {
     setMessageIcon(false);
     setAlertIcon(false);
     setSearchIcon(false);
+    setProfileIcon(false);
   };
   const onProfile = () => {
     navigate("/profile");
+    setProfileIcon(true);
   };
   const onHome = () => {
     navigate("");
@@ -79,13 +87,14 @@ const SideMenu = () => {
     setMessageIcon(false);
     setAlertIcon(false);
     setSearchIcon(false);
+    setProfileIcon(false);
   };
   const loacation = useLocation();
 
   return (
     <Wrapper>
       <MenuField>
-        <LogoField>
+        <LogoField onClick={onHome}>
           <NavIcons.LogoText />
         </LogoField>
         <MidIcons>
@@ -103,7 +112,7 @@ const SideMenu = () => {
             )}
           </IconContainer>
           <IconContainer onClick={() => onSearch()}>
-            {searchIcon === true ? (
+            {searchIcon ? (
               <>
                 <NavIcons.Search selected />
                 <Name weight={600}>검색</Name>
@@ -116,7 +125,7 @@ const SideMenu = () => {
             )}
           </IconContainer>
           <IconContainer onClick={() => onResearch()}>
-            {researchIcon === true ? (
+            {researchIcon ? (
               <>
                 <NavIcons.Research selected />
                 <Name weight={600}>탐색 탭</Name>
@@ -129,7 +138,7 @@ const SideMenu = () => {
             )}
           </IconContainer>
           <IconContainer onClick={() => onReels()}>
-            {reelsIcon === true ? (
+            {reelsIcon ? (
               <>
                 <NavIcons.Reels selected />
                 <Name weight={600}>릴스</Name>
@@ -142,7 +151,7 @@ const SideMenu = () => {
             )}
           </IconContainer>
           <IconContainer onClick={() => onMessage()}>
-            {messageIcon === true ? (
+            {messageIcon ? (
               <>
                 <NavIcons.Message selected />
                 <Name weight={600}>메시지</Name>
@@ -155,7 +164,7 @@ const SideMenu = () => {
             )}
           </IconContainer>
           <IconContainer onClick={() => onAlert()}>
-            {alertIcon === true ? (
+            {alertIcon ? (
               <>
                 <NavIcons.Alert selected />
                 <Name weight={600}>알림</Name>
@@ -172,12 +181,26 @@ const SideMenu = () => {
             <Name>만들기</Name>
           </IconContainer>
           <IconContainer onClick={onProfile}>
-            <Profile
-              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ3G8FOX8WmJdD0DWd4xfoi5I1mLjkSjFbFaA&s"
-              height={24}
-              width={24}
-            />
-            <Name weight={0}>프로필</Name>
+            {loacation.pathname === "/profile" ? (
+              <>
+                <Profile
+                  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ3G8FOX8WmJdD0DWd4xfoi5I1mLjkSjFbFaA&s"
+                  height={24}
+                  width={24}
+                  border={2}
+                />
+                <Name weight={600}>프로필</Name>
+              </>
+            ) : (
+              <>
+                <Profile
+                  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ3G8FOX8WmJdD0DWd4xfoi5I1mLjkSjFbFaA&s"
+                  height={24}
+                  width={24}
+                />
+                <Name weight={0}>프로필</Name>
+              </>
+            )}
           </IconContainer>
         </MidIcons>
         <IconContainer>
@@ -237,6 +260,7 @@ const MidIcons = styled.div`
 
 const LogoField = styled.div`
   margin: 0px 0px 19px;
+  cursor: pointer;
   padding: 25px 12px 16px;
 `;
 
