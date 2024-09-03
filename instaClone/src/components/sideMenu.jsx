@@ -3,6 +3,7 @@ import NavIcons from "../icons/navicons";
 import { Profile } from "./story";
 import { useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
+import PopUp from "./modal";
 
 const SideMenu = () => {
   const [homeIcon, setHomeIcon] = useState(false);
@@ -12,8 +13,17 @@ const SideMenu = () => {
   const [messageIcon, setMessageIcon] = useState(false);
   const [alertIcon, setAlertIcon] = useState(false);
   const [moreIcon, setMoreIcon] = useState(false);
-  const [profileIcon, setProfileIcon] = useState(false);
+  const [modalOpen, setModalOpen] = useState(false);
   const navigate = useNavigate();
+  const loacation = useLocation();
+
+  const openModal = () => {
+    setModalOpen(true);
+  };
+  const closeModal = () => {
+    setModalOpen(false);
+  };
+
   const onSearch = () => {
     setSearchIcon(!searchIcon);
     setHomeIcon(false);
@@ -76,7 +86,6 @@ const SideMenu = () => {
   };
   const onProfile = () => {
     navigate("/profile");
-    setProfileIcon(true);
   };
   const onHome = () => {
     navigate("");
@@ -89,8 +98,6 @@ const SideMenu = () => {
     setSearchIcon(false);
     setProfileIcon(false);
   };
-  const loacation = useLocation();
-
   return (
     <Wrapper>
       <MenuField>
@@ -176,7 +183,7 @@ const SideMenu = () => {
               </>
             )}
           </IconContainer>
-          <IconContainer>
+          <IconContainer onClick={openModal}>
             <NavIcons.Create />
             <Name>만들기</Name>
           </IconContainer>
@@ -220,6 +227,7 @@ const SideMenu = () => {
             </>
           )}
         </IconContainer>
+        {modalOpen && <PopUp close={closeModal} />}
       </MenuField>
     </Wrapper>
   );
@@ -269,6 +277,7 @@ const Wrapper = styled.div`
   position: fixed;
   height: 100vh;
   width: 16%;
+  background-color: white;
 `;
 const MenuField = styled.aside`
   box-sizing: border-box;
