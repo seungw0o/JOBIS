@@ -49,6 +49,10 @@ const FileBtn = styled.label`
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
     Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   font-weight: 600;
+  cursor: pointer;
+  &:hover {
+    background-color: #007ccf;
+  }
 `;
 const Wrapper = styled.div`
   display: flex;
