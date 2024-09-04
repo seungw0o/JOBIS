@@ -7,7 +7,7 @@ const PeedBoard = () => {
   return (
     <Wrapper>
       <Peed name={"ee.j_x0"} time={"10"} exp={"테스트"} />
-      <Peed name={"txd.w0_"} time={"1"} exp={"JOBIS"} />
+      <Peed name={"txd.w0_"} time={"1"} exp={"졸리다"} />
       <Peed name={"hi"} time={"200"} exp={"집가자"} />
     </Wrapper>
   );

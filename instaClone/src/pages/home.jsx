@@ -30,7 +30,6 @@ const RightSide = styled.div`
 const Container = styled.div`
   display: flex;
   margin-left: 350px;
-
   flex-direction: column;
 `;
 
