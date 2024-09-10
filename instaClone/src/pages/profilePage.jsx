@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { Profile } from "../components/story";
-import NavIcons from "../icons/navicons";
+import NavIcons from "../assets/navicons";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 

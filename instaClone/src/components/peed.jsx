@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { Profile } from "./story";
-import NavIcons from "../icons/navicons";
+import NavIcons from "../assets/navicons";
 import { useState } from "react";
 
 const Peed = ({ name, time, exp }) => {
