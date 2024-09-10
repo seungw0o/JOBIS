@@ -1,9 +1,8 @@
 import styled from "styled-components";
-import NavIcons from "../icons/navicons";
-import { useState } from "react";
+import NavIcons from "../assets/navicons";
 
 const PopUp = ({ close }) => {
-  const onClick = () => {
+  const onClose = () => {
     close();
   };
   return (
@@ -13,7 +12,7 @@ const PopUp = ({ close }) => {
         <FileBtn htmlFor="file">컴퓨터에서 선택</FileBtn>
         <File type="file" id="file" />
       </Field>
-      <CloseField onClick={onClick}>
+      <CloseField onClick={onClose}>
         <NavIcons.close />
       </CloseField>
     </Wrapper>
