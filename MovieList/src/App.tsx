@@ -2,7 +2,7 @@ import styled, { createGlobalStyle } from "styled-components";
 import MainRouter from "./routers/MainRouter";
 import reset from "styled-reset";
 
-function App() {
+function App(): JSX.Element {
   return (
     <Wrapper>
       <GlobalStyles />
