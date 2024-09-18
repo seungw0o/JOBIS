@@ -1,14 +1,25 @@
+import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 
 interface MovieProps {
   title: string;
   coverimg: string;
   summary: string;
+  id: number;
 }
 
-const MovieScreen = ({ title, coverimg, summary }: MovieProps): JSX.Element => {
+const MovieScreen = ({
+  title,
+  coverimg,
+  summary,
+  id,
+}: MovieProps): JSX.Element => {
+  const navigate = useNavigate();
+  const onDetail = (): void => {
+    navigate(`/movie/${id}`);
+  };
   return (
-    <Wrapper>
+    <Wrapper onClick={onDetail}>
       <CoverImg src={coverimg} alt={title} />
       <MovieTitle>{title}</MovieTitle>
       <MovieSummary>{summary}</MovieSummary>
@@ -37,6 +48,10 @@ const Wrapper = styled.div`
   color: inherit;
   box-shadow: 0 13px 27px -5px rgba(50, 50, 93, 0.25),
     0 8px 16px -8px rgba(0, 0, 0, 0.3), 0 -6px 16px -6px rgba(0, 0, 0, 0.025);
+  cursor: pointer;
+  &:hover {
+    opacity: 0.8;
+  }
 `;
 const CoverImg = styled.img`
   position: relative;
@@ -45,8 +60,9 @@ const CoverImg = styled.img`
   height: 200px;
   width: 100%;
   margin-right: 30px;
-  box-shadow: 0 30px 60px -12px rgba(50, 50, 93, 0.25),
-    0 18px 36px -18px rgba(0, 0, 0, 0.3), 0 -12px 36px -8px rgba(0, 0, 0, 0.025);
+  box-shadow: 0 30px 60px -12px rgba(255, 255, 255, 0.25),
+    0 18px 36px -18px rgba(255, 255, 255, 0.3),
+    0 -12px 36px -8px rgba(0, 0, 0, 0.025);
 `;
 const MovieTitle = styled.h2`
   margin: 0;
